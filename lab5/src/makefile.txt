@@ -1,0 +1,19 @@
+CC=gcc
+CFLAGS=-I.
+
+all: mutex nomutex factorial deadlock 
+
+mutex: 
+	$(CC) -o mutex mutex.c -lpthread $(CFLAGS)
+
+nomutex: 
+	$(CC) -o nomutex nomutex.c -lpthread $(CFLAGS)
+
+factorial:
+	$(CC) -o factorial factorial.c -lpthread $(CFLAGS)
+
+deadlock:
+	$(CC) -o deadlock deadlock.c -lpthread $(CFLAGS)
+
+clean:
+	rm mutex nomutex factorial deadlock
